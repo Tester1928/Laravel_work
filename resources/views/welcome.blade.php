@@ -7,7 +7,7 @@
         <title>Laravel</title>
     </head>
     <body class="antialiased">
-        <h1>Laravel install</h1>
+        <h1>Laravel install to home</h1>
         <script src="/js/app.js"></script>
     </body>
 </html>
