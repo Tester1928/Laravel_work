@@ -10,6 +10,8 @@ class IndexController extends Controller
     {
         $post = Post::query()->orderBy("created_at", "DESC")->limit(3)->get();
 
-        return view('welcome',["posts"=>$post]);
+        return view('welcome',[
+            "posts"=>$post
+        ]);
     }
 }
