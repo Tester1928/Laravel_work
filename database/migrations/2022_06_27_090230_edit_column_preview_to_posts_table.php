@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnPreviewTextToPostsTable extends Migration
+class EditColumnPreviewToPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddColumnPreviewTextToPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->addColumn("text","preview_image")->nullable()->after("preview");
+            $table->renameColumn("preview","preview_text");
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumnPreviewTextToPostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn("preview_image");
+            $table->renameColumn("preview_text","preview");
         });
     }
 }
